@@ -5,18 +5,26 @@
 #
 class elasticsearch::params {
     $clustername = 'ElasticCluster'
-    $version = '0.19.10'
+    $version     = '0.20.3'
+
+    # run as user / group
+    $es_user     = 'elasticsearch'
+    $es_group    = 'elasticsearch'
+
+    # default heap-size 
+    $heap_size   = '2g'
+
 
     case $::operatingsystem {
         'Debian': {
             $package     = 'elasticsearch'
             $service     = 'elasticsearch'
-            $config_file = '/etc/elasticsearch/elasticsearch.yml'
-            $config_log  = '/etc/elasticsearch/logging.yml'
+            $config_dir  = '/etc/elasticsearch'
+            $config_file = "${conf_dir}/elasticsearch.yml"
+            $config_log  = "${conf_dir}/logging.yml"
             $dir_base    = '/usr/share/elasticsearch'
             $dir_plugins = "${dir_base}/plugins"
-            $bin_plugin  = '/usr/share/elasticsearch/bin/plugin'
-
+            $bin_plugin  = "${dir_base}/bin/plugin"
         }
         default: {
             fail("sorry, I don't know how to support ${::operatingsystem}")

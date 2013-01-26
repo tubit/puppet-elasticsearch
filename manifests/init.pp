@@ -1,7 +1,7 @@
 #######################################################
 # Class: elasticsearch
 #
-# All default values shall be defined in the
+# All default values are defined in the
 # elasticsearch::params class.
 #
 # == Parameters
@@ -31,6 +31,7 @@ class elasticsearch (
     $clustername   = $elasticsearch::params::clustername,
     $package       = $elasticsearch::params::package,
     $version       = $elasticsearch::params::version,
+    $heap_size     = $elasticsearch::params::heap_size,
     $running       = true
 ) inherits elasticsearch::params {
     class{'elasticsearch::package': }->

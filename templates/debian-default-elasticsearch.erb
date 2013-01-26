@@ -1,9 +1,15 @@
 # Run ElasticSearch as this user ID and group ID
-#ES_USER=elasticsearch
-#ES_GROUP=elasticsearch
+<% if scope.lookupvar('elasticsearch::params::es_user') != '' -%>
+    ES_USER=<%= scope.lookupvar('elasticsearch::params::es_user') %>
+<% end -%>
+<% if scope.lookupvar('elasticsearch::params::es_group') != '' -%>
+    ES_GROUP=<%= scope.lookupvar('elasticsearch::params::es_group') %>
+<% end -%>
 
 # Heap Size (defaults to 256m min, 1g max)
-ES_HEAP_SIZE=2g
+<% if scope.lookupvar('elasticsearch::heap_size') != '' -%>
+    ES_HEAP_SIZE=<%= scope.lookupvar('elasticsearch::heap_size') %>
+<% end -%>
 
 # Heap new generation
 #ES_HEAP_NEWSIZE=
@@ -29,10 +35,14 @@ ES_HEAP_SIZE=2g
 #WORK_DIR=/tmp/elasticsearch
 
 # ElasticSearch configuration directory
-#CONF_DIR=/etc/elasticsearch
+<% if scope.lookupvar('elasticsearch::params::config_dir') != '' -%>
+    CONF_DIR=<%= scope.lookupvar('elasticsearch::params::config_dir') %>
+<% end -%>
 
 # ElasticSearch configuration file (elasticsearch.yml)
-#CONF_FILE=/etc/elasticsearch/elasticsearch.yml
+<% if scope.lookupvar('elasticsearch::params::config_file') != '' -%>
+    CONF_FILE=<%= scope.lookupvar('elasticsearch::params::config_file') %>
+<% end -%>
 
 # Additional Java OPTS
 #ES_JAVA_OPTS=
