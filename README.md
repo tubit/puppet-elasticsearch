@@ -19,7 +19,12 @@ There are plenty of plugins available for elasticsearch, have a look
 at http://www.elasticsearch.org/guide/reference/modules/plugins.html 
 for more informiation.
 
-### head plugin
+Install "elasticsearch-head" plugin:
+```
+elasticsearch::plugin{'mobz/elasticsearch-head': module_dir => 'head'; }
+```
+
+### Example: the head plugin
 
 The head-plugin is a nice web based gui for elasticsearch. Installation:
 
