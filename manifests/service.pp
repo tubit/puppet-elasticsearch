@@ -1,5 +1,4 @@
-#######################################################
-# Class: elasticsearch::service
+# == Class: elasticsearch::service
 #
 class elasticsearch::service inherits elasticsearch::params {
     service {

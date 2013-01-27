@@ -1,5 +1,4 @@
-#######################################################
-# Class: elasticsearch::params
+# == Class: elasticsearch::params
 #
 # Default values for elasticsearch installations
 #

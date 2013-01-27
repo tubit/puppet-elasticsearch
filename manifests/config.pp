@@ -1,5 +1,4 @@
-#######################################################
-# Class: elasticsearch::config
+# == Class: elasticsearch::config
 #
 class elasticsearch::config inherits elasticsearch::params {
     $clustername = $elasticsearch::clustername
@@ -26,16 +25,4 @@ class elasticsearch::config inherits elasticsearch::params {
             }
         }
     }
-
-    #    blau_commons::line {
-    #        "elasticsearch_soft_nofile":
-    #            file => "/etc/security/limits.conf",
-    #            line => "elasticsearch soft nofile 32000";
-    #    }
-    #    blau_commons::line {
-    #        "elasticsearch_hard_nofile":
-    #            file => "/etc/security/limits.conf",
-    #            line => "elasticsearch hard nofile 32000";
-    #    }
- 
 }

@@ -1,5 +1,4 @@
-#######################################################
-# Class: elasticsearch::package
+# == Class: elasticsearch::package
 #
 class elasticsearch::package inherits elasticsearch::params {
     package {
