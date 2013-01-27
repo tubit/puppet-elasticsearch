@@ -19,8 +19,8 @@ class elasticsearch::params {
             $package     = 'elasticsearch'
             $service     = 'elasticsearch'
             $config_dir  = '/etc/elasticsearch'
-            $config_file = "${conf_dir}/elasticsearch.yml"
-            $config_log  = "${conf_dir}/logging.yml"
+            $config_file = "${config_dir}/elasticsearch.yml"
+            $config_log  = "${config_dir}/logging.yml"
             $dir_base    = '/usr/share/elasticsearch'
             $dir_plugins = "${dir_base}/plugins"
             $bin_plugin  = "${dir_base}/bin/plugin"
