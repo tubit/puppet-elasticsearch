@@ -1,10 +1,9 @@
-#######################################################
-# Class: elasticsearch
+# == Class: elasticsearch
 #
 # All default values are defined in the
 # elasticsearch::params class.
 #
-# == Parameters
+# === Parameters
 #
 #   [*clustername*]
 #       Name of elasticsearch Cluster
@@ -19,11 +18,11 @@
 #       state of elasticsearch service
 #
 #
-# == Examples
+# === Examples
 #
 #   class{'elasticsearch': clustername => 'test'}
 #
-# == Author
+# === Author
 #
 # Dennis Konert <dkonert@gmail.com>
 #
