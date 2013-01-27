@@ -3,8 +3,5 @@
 class elasticsearch::plugin::head (
     $ensure = 'installed' 
 ) inherits elasticsearch::params {
-    exec {'install-plugin-head':
-        command => "${elasticsearch::params::bin_plugin} -install mobz/elasticsearch-head",
-        creates  => "${elasticsearch::params::dir_plugins}/head";
-    }
+    elasticsearch::plugin{'mobz/elasticsearch-head': module_dir => 'head', ensure => $ensure; } 
 }
